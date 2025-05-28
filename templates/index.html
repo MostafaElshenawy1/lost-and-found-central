@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lost and Found Central</title>
+    <link rel="stylesheet" href="../assets/css/global.css" />
+    <link rel="stylesheet" href="../assets/css/modal.css" />
+    <link rel="stylesheet" href="../assets/css/home.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar-brand">Lost and Found Central</div>
+        <div class="navbar-actions">
+          <button class="nav-btn" id="post-lost-btn">Post Lost Item</button>
+          <button class="nav-btn" id="post-found-btn">Post Found Item</button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="slider-section">
+        <div class="slider-header">
+          <h2>Lost Items</h2>
+          <a href="lost.php" class="view-all-btn">View All</a>
+        </div>
+        <div class="slider-wrapper" style="position: relative">
+          <button class="slider-arrow left" aria-label="Scroll left">
+            &#8592;
+          </button>
+          <div class="slider" id="lost-slider">
+            <!-- LOST_ITEMS_PLACEHOLDER -->
+          </div>
+          <button class="slider-arrow right" aria-label="Scroll right">
+            &#8594;
+          </button>
+        </div>
+      </section>
+      <section class="slider-section">
+        <div class="slider-header">
+          <h2>Found Items</h2>
+          <a href="found.php" class="view-all-btn">View All</a>
+        </div>
+        <div class="slider-wrapper" style="position: relative">
+          <button class="slider-arrow left" aria-label="Scroll left">
+            &#8592;
+          </button>
+          <div class="slider" id="found-slider">
+            <!-- FOUND_ITEMS_PLACEHOLDER -->
+          </div>
+          <button class="slider-arrow right" aria-label="Scroll right">
+            &#8594;
+          </button>
+        </div>
+      </section>
+    </main>
+    <!-- Modal for posting lost item -->
+    <div class="modal" id="lost-modal">
+      <div class="modal-content">
+        <span class="close" data-modal="lost-modal">&times;</span>
+        <h2>Post Lost Item</h2>
+        <form id="lost-form">
+          <label>Title<input type="text" name="title" required /></label>
+          <label
+            >Image <input type="file" name="image" accept="image/*" required
+          /></label>
+          <label
+            >Description<textarea name="description" required></textarea>
+          </label>
+          <label>Location<input type="text" name="location" required /></label>
+          <label
+            >Contact Email<input type="email" name="contact" required
+          /></label>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <!-- Modal for posting found item -->
+    <div class="modal" id="found-modal">
+      <div class="modal-content">
+        <span class="close" data-modal="found-modal">&times;</span>
+        <h2>Post Found Item</h2>
+        <form id="found-form">
+          <label>Title<input type="text" name="title" required /></label>
+          <label
+            >Image <input type="file" name="image" accept="image/*" required
+          /></label>
+          <label
+            >Description<textarea name="description" required></textarea>
+          </label>
+          <label>Location<input type="text" name="location" required /></label>
+          <label
+            >Contact Email<input type="email" name="contact" required
+          /></label>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <script src="../assets/js/modal.js"></script>
+  </body>
+</html>

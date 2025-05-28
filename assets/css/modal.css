@@ -1,0 +1,105 @@
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(35, 41, 70, 0.25);
+  justify-content: center;
+  align-items: center;
+}
+.modal.show {
+  display: flex;
+}
+.modal-content {
+  background: #fff;
+  margin: auto;
+  border-radius: 16px;
+  padding: 2.5rem 2rem 2rem 2rem;
+  box-shadow: 0 8px 40px rgba(35, 41, 70, 0.18);
+  min-width: 320px;
+  max-width: 95vw;
+  width: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.close {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.3rem;
+  font-size: 1.5rem;
+  color: #3f37c9;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.close:hover {
+  color: #232946;
+}
+.modal-content h2 {
+  margin: 0 0 0.7rem 0;
+  font-size: 1.3rem;
+  color: #232946;
+  font-weight: 700;
+}
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.modal-content label {
+  font-size: 1rem;
+  color: #232946;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.modal-content input,
+.modal-content textarea {
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #bfc6e0;
+  font-size: 1rem;
+  font-family: inherit;
+  margin-top: 0.2rem;
+  margin-bottom: 0.1rem;
+  resize: none;
+}
+.modal-content textarea {
+  min-height: 60px;
+  max-height: 180px;
+}
+.modal-content button[type='submit'] {
+  background: linear-gradient(90deg, #5f6fff 0%, #3f37c9 100%);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.7rem;
+  align-self: flex-end;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(95, 111, 255, 0.1);
+}
+.modal-content button[type='submit']:hover,
+.modal-content button[type='submit']:focus {
+  background: linear-gradient(90deg, #3f37c9 0%, #5f6fff 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(95, 111, 255, 0.18);
+}
+@media (max-width: 700px) {
+  .modal-content {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    min-width: 0;
+    width: 98vw;
+  }
+}

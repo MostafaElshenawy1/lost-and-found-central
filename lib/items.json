@@ -1,0 +1,182 @@
+[
+  {
+    "id": "lost1",
+    "type": "lost",
+    "title": "Blue Water Bottle",
+    "image": "image.jpg",
+    "description": "A blue reusable water bottle with a dent on the cap.",
+    "location": "Library, 2nd Floor",
+    "contact": "owner1@email.com"
+  },
+  {
+    "id": "lost2",
+    "type": "lost",
+    "title": "Black Backpack",
+    "image": "image.jpg",
+    "description": "Black backpack with a laptop compartment and a keychain.",
+    "location": "Cafeteria",
+    "contact": "owner2@email.com"
+  },
+  {
+    "id": "lost3",
+    "type": "lost",
+    "title": "Silver iPhone",
+    "image": "image.jpg",
+    "description": "iPhone 12 in a clear case, minor scratches on the back.",
+    "location": "Gym Locker Room",
+    "contact": "owner3@email.com"
+  },
+  {
+    "id": "lost4",
+    "type": "lost",
+    "title": "Red Umbrella",
+    "image": "image.jpg",
+    "description": "Bright red umbrella with a wooden handle.",
+    "location": "Main Entrance",
+    "contact": "owner4@email.com"
+  },
+  {
+    "id": "lost5",
+    "type": "lost",
+    "title": "Set of Keys",
+    "image": "image.jpg",
+    "description": "Three keys on a blue keyring, one with a smiley sticker.",
+    "location": "Parking Lot B",
+    "contact": "owner5@email.com"
+  },
+  {
+    "id": "lost6",
+    "type": "lost",
+    "title": "Math Textbook",
+    "image": "image.jpg",
+    "description": "Calculus textbook, name written inside cover.",
+    "location": "Room 204",
+    "contact": "owner6@email.com"
+  },
+  {
+    "id": "lost7",
+    "type": "lost",
+    "title": "Silver Bracelet",
+    "image": "image.jpg",
+    "description": "Delicate silver bracelet with heart charm.",
+    "location": "Restroom near Cafeteria",
+    "contact": "owner7@email.com"
+  },
+  {
+    "id": "lost8",
+    "type": "lost",
+    "title": "Earbuds Case",
+    "image": "image.jpg",
+    "description": "White wireless earbuds case, no earbuds inside.",
+    "location": "Bus Stop",
+    "contact": "owner8@email.com"
+  },
+  {
+    "id": "lost9",
+    "type": "lost",
+    "title": "Green Jacket",
+    "image": "image.jpg",
+    "description": "Olive green jacket, medium size, zipper broken.",
+    "location": "Science Building",
+    "contact": "owner9@email.com"
+  },
+  {
+    "id": "lost10",
+    "type": "lost",
+    "title": "Student ID Card",
+    "image": "image.jpg",
+    "description": "University student ID card, name: Alex M.",
+    "location": "Library Front Desk",
+    "contact": "owner10@email.com"
+  },
+  {
+    "id": "found1",
+    "type": "found",
+    "title": "Blue Water Bottle",
+    "image": "image.jpg",
+    "description": "Blue water bottle found near the vending machines.",
+    "location": "Student Lounge",
+    "contact": "finder1@email.com"
+  },
+  {
+    "id": "found2",
+    "type": "found",
+    "title": "Black Wallet",
+    "image": "image.jpg",
+    "description": "Leather wallet with several cards inside.",
+    "location": "Parking Garage",
+    "contact": "finder2@email.com"
+  },
+  {
+    "id": "found3",
+    "type": "found",
+    "title": "Silver Laptop",
+    "image": "image.jpg",
+    "description": "13-inch laptop, sticker on the lid.",
+    "location": "Lecture Hall 3",
+    "contact": "finder3@email.com"
+  },
+  {
+    "id": "found4",
+    "type": "found",
+    "title": "Red Scarf",
+    "image": "image.jpg",
+    "description": "Woolen red scarf, slightly frayed at the ends.",
+    "location": "Cafeteria",
+    "contact": "finder4@email.com"
+  },
+  {
+    "id": "found5",
+    "type": "found",
+    "title": "Set of Keys",
+    "image": "image.jpg",
+    "description": "Set of keys with a car fob and a gym tag.",
+    "location": "Library Lost & Found",
+    "contact": "finder5@email.com"
+  },
+  {
+    "id": "found6",
+    "type": "found",
+    "title": "Blue Notebook",
+    "image": "image.jpg",
+    "description": "Spiral notebook, lots of handwritten notes inside.",
+    "location": "Room 101",
+    "contact": "finder6@email.com"
+  },
+  {
+    "id": "found7",
+    "type": "found",
+    "title": "Gold Ring",
+    "image": "image.jpg",
+    "description": "Simple gold ring, no engravings.",
+    "location": "Restroom near Main Hall",
+    "contact": "finder7@email.com"
+  },
+  {
+    "id": "found8",
+    "type": "found",
+    "title": "Wireless Mouse",
+    "image": "image.jpg",
+    "description": "Black wireless mouse, battery cover missing.",
+    "location": "Computer Lab",
+    "contact": "finder8@email.com"
+  },
+  {
+    "id": "found9",
+    "type": "found",
+    "title": "Green Water Bottle",
+    "image": "image.jpg",
+    "description": "Green bottle with a sticker, found under a bench.",
+    "location": "Playground",
+    "contact": "finder9@email.com"
+  },
+  {
+    "id": "found10",
+    "type": "found",
+    "title": "Student ID Card",
+    "image": "image.jpg",
+    "description": "Student ID card, name: Sarah L.",
+    "location": "Security Office",
+    "contact": "finder10@email.com"
+  }
+]

@@ -1,0 +1,98 @@
+/* Detail page styles */
+.detail-container {
+  max-width: 500px;
+  margin: 2.5rem auto;
+  background: #f4f6fb;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(35, 41, 70, 0.07);
+  padding: 2rem;
+}
+
+.detail-container img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(95, 111, 255, 0.1);
+}
+
+.detail-container p {
+  margin: 0.7rem 0;
+  font-size: 1.05rem;
+  color: #232946;
+}
+
+.detail-container p strong {
+  font-size: 1.4rem;
+  color: #3f37c9;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.detail-container p em {
+  color: #5f6fff;
+  font-style: normal;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.detail-container a {
+  color: #3f37c9;
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+.detail-container a:hover {
+  color: #5f6fff;
+}
+
+/* Status indicator */
+.status {
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: white;
+  text-transform: uppercase;
+  margin-left: 0.5rem;
+}
+
+.status.found {
+  background: linear-gradient(90deg, #3ec959, #2ea641);
+}
+
+.status.lost {
+  background: linear-gradient(90deg, #f86565, #dc3c3c);
+}
+
+/* Error message styles */
+.error-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.error-container h2 {
+  color: #3f37c9;
+  margin-bottom: 1rem;
+}
+
+.error-container p {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .detail-container {
+    padding: 1.5rem 1rem;
+    margin: 1rem auto;
+  }
+
+  .detail-container img {
+    max-width: 100%;
+  }
+}
