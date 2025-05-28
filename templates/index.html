@@ -26,36 +26,78 @@
       </nav>
     </header>
     <main>
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <h1 class="hero-title">Lost & Found Central</h1>
+        <p class="hero-subtitle">
+          Reuniting people with their belongings. Post lost items or help others
+          find what they're looking for in our community-driven platform.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number" id="lost-count">0</span>
+            <span class="stat-label">Lost Items</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="found-count">0</span>
+            <span class="stat-label">Found Items</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="total-count">0</span>
+            <span class="stat-label">Total Posts</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lost Items Section -->
       <section class="slider-section">
         <div class="slider-header">
-          <h2>Lost Items</h2>
-          <a href="lost.php" class="view-all-btn">View All</a>
+          <h2>🔍 Recently Lost Items</h2>
+          <a href="lost.php" class="view-all-btn">View All Lost Items</a>
         </div>
-        <div class="slider-wrapper" style="position: relative">
-          <button class="slider-arrow left" aria-label="Scroll left">
+        <div class="slider-wrapper">
+          <button
+            class="slider-arrow left"
+            aria-label="Scroll left"
+            data-slider="lost-slider"
+          >
             &#8592;
           </button>
           <div class="slider" id="lost-slider">
             <!-- LOST_ITEMS_PLACEHOLDER -->
           </div>
-          <button class="slider-arrow right" aria-label="Scroll right">
+          <button
+            class="slider-arrow right"
+            aria-label="Scroll right"
+            data-slider="lost-slider"
+          >
             &#8594;
           </button>
         </div>
       </section>
+
+      <!-- Found Items Section -->
       <section class="slider-section">
         <div class="slider-header">
-          <h2>Found Items</h2>
-          <a href="found.php" class="view-all-btn">View All</a>
+          <h2>🎉 Recently Found Items</h2>
+          <a href="found.php" class="view-all-btn">View All Found Items</a>
         </div>
-        <div class="slider-wrapper" style="position: relative">
-          <button class="slider-arrow left" aria-label="Scroll left">
+        <div class="slider-wrapper">
+          <button
+            class="slider-arrow left"
+            aria-label="Scroll left"
+            data-slider="found-slider"
+          >
             &#8592;
           </button>
           <div class="slider" id="found-slider">
             <!-- FOUND_ITEMS_PLACEHOLDER -->
           </div>
-          <button class="slider-arrow right" aria-label="Scroll right">
+          <button
+            class="slider-arrow right"
+            aria-label="Scroll right"
+            data-slider="found-slider"
+          >
             &#8594;
           </button>
         </div>
@@ -104,5 +146,6 @@
       </div>
     </div>
     <script src="../assets/js/modal.js"></script>
+    <script src="../assets/js/home.js"></script>
   </body>
 </html>

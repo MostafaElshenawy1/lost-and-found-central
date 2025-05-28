@@ -15,10 +15,6 @@ $found_items = array_filter($items, function($item) {
 $lost_items = array_values($lost_items);
 $found_items = array_values($found_items);
 
-// Limit to first 5 items for each slider
-$lost_items = array_slice($lost_items, 0, 5);
-$found_items = array_slice($found_items, 0, 5);
-
 // Build HTML for lost items
 $lost_items_html = '';
 foreach ($lost_items as $item) {
