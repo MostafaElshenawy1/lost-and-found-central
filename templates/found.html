@@ -6,14 +6,22 @@
     <title>Found Items - Lost and Found Central</title>
     <link rel="stylesheet" href="../assets/css/global.css" />
     <link rel="stylesheet" href="../assets/css/found.css" />
+    <link rel="stylesheet" href="../assets/css/modal.css" />
   </head>
   <body>
     <header>
       <nav class="navbar">
-        <div class="navbar-brand">Lost and Found Central</div>
+        <a href="home.php" class="navbar-brand">Lost and Found Central</a>
+        <div class="navbar-center">
+          <a href="home.php" class="nav-link">Home</a>
+          <a href="lost.php" class="nav-link">Lost Items</a>
+          <a href="found.php" class="nav-link active">Found Items</a>
+        </div>
         <div class="navbar-actions">
-          <a href="home.php" class="nav-btn">Home</a>
-          <button class="nav-btn" id="post-found-btn">Post Found Item</button>
+          <button class="nav-btn" id="post-lost-btn">📝 Post Lost</button>
+          <button class="nav-btn primary" id="post-found-btn">
+            🎉 Post Found
+          </button>
         </div>
       </nav>
     </header>
@@ -22,6 +30,28 @@
         <!-- FOUND_ITEMS_CONTENT -->
       </div>
     </main>
+
+    <!-- Modal for posting lost item -->
+    <div class="modal" id="lost-modal">
+      <div class="modal-content">
+        <span class="close" data-modal="lost-modal">&times;</span>
+        <h2>Post Lost Item</h2>
+        <form id="lost-form">
+          <label>Title<input type="text" name="title" required /></label>
+          <label
+            >Image <input type="file" name="image" accept="image/*" required
+          /></label>
+          <label
+            >Description<textarea name="description" required></textarea>
+          </label>
+          <label>Location<input type="text" name="location" required /></label>
+          <label
+            >Contact Email<input type="email" name="contact" required
+          /></label>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
 
     <!-- Modal for posting found item -->
     <div class="modal" id="found-modal">
