@@ -1,0 +1,137 @@
+/* Unified CSS for Lost and Found pages */
+
+/* Page header styling */
+.page-header {
+  text-align: center;
+  padding: 2rem 1rem 3rem 1rem;
+  background-color: whitesmoke;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(35, 41, 70, 0.08);
+}
+
+.page-title {
+  font-size: 2.5rem;
+  color: #232946;
+  margin: 0 0 0.5rem 0;
+}
+
+.page-subtitle {
+  color: #6b7280;
+  margin: 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+/* Grid layout for items */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.item-card {
+  padding: 2rem 1.5rem 1.8rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(35, 41, 70, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.item-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.item-card img {
+  width: 100%;
+  max-width: 200px;
+  height: 160px;
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+  align-self: center;
+  box-shadow: 0 4px 20px rgba(35, 41, 70, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.item-card:hover img {
+  transform: scale(1.05);
+}
+
+.item-card p {
+  margin: 0.3rem 0 0.6rem 0;
+}
+
+.item-card p strong {
+  font-size: 1.2rem;
+}
+
+.item-card p em {
+  color: #5f6fff;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.item-card a {
+  color: #3f37c9;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 1.5rem 0.5rem 2rem 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+  }
+
+  .items-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .item-card {
+    padding: 1.5rem 1rem 1.3rem 1rem;
+  }
+
+  .item-card img {
+    height: 120px;
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header {
+    padding: 1rem 0.5rem 1.5rem 0.5rem;
+  }
+
+  .page-title {
+    font-size: 1.6rem;
+  }
+
+  .items-grid {
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .item-card {
+    padding: 1rem 0.8rem;
+  }
+
+  .item-card img {
+    height: 100px;
+    max-width: 120px;
+  }
+}

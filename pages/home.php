@@ -34,7 +34,7 @@ foreach ($found_items as $item) {
 }
 
 // Load the template
-$template = file_get_contents('../templates/index.html');
+$template = file_get_contents('../templates/home.html');
 
 // Replace placeholders with dynamic content
 $template = str_replace('<!-- LOST_ITEMS_PLACEHOLDER -->', $lost_items_html, $template);
