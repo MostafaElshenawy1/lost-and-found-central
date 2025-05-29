@@ -44,7 +44,7 @@
       <div class="modal-content">
         <span class="close" data-modal="lost-modal">&times;</span>
         <h2>Post Lost Item</h2>
-        <form id="lost-form">
+        <form method="POST" enctype="multipart/form-data" id="lost-form">
           <label>Title<input type="text" name="title" required /></label>
           <label
             >Image <input type="file" name="image" accept="image/*" required
@@ -66,7 +66,7 @@
       <div class="modal-content">
         <span class="close" data-modal="found-modal">&times;</span>
         <h2>Post Found Item</h2>
-        <form id="found-form">
+        <form method="POST" enctype="multipart/form-data" id="found-form">
           <label>Title<input type="text" name="title" required /></label>
           <label
             >Image <input type="file" name="image" accept="image/*" required
