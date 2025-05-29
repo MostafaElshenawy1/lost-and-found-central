@@ -47,7 +47,7 @@ lost-and-found-central/
 
 - **Frontend**: HTML, CSS, JavaScript
 - **Backend**: PHP
-- **Data Storage**: JSON file
+- **Data Storage**: SQL seeded by JSON file
 
 ## Setup Instructions
 
