@@ -45,6 +45,7 @@
         <span class="close" data-modal="lost-modal">&times;</span>
         <h2>Post Lost Item</h2>
         <form method="POST" enctype="multipart/form-data" id="lost-form">
+          <input type="hidden" name="type" value="lost">
           <label>Title<input type="text" name="title" required /></label>
           <label
             >Image <input type="file" name="image" accept="image/*" required
@@ -67,6 +68,7 @@
         <span class="close" data-modal="found-modal">&times;</span>
         <h2>Post Found Item</h2>
         <form method="POST" enctype="multipart/form-data" id="found-form">
+          <input type="hidden" name="type" value="found">
           <label>Title<input type="text" name="title" required /></label>
           <label
             >Image <input type="file" name="image" accept="image/*" required
