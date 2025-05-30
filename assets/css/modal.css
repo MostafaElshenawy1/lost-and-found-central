@@ -6,7 +6,7 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(35, 41, 70, 0.25);
+  background: rgba(70, 35, 35, 0.25);
   justify-content: center;
   align-items: center;
 }
@@ -17,7 +17,7 @@
   background: white;
   border-radius: 16px;
   padding: 2.5rem 2rem 2rem 2rem;
-  box-shadow: 0 8px 40px rgba(35, 41, 70, 0.18);
+  box-shadow: 0 8px 40px rgba(70, 35, 35, 0.18);
   min-width: 320px;
   max-width: 95vw;
   width: 400px;
@@ -28,18 +28,18 @@
   top: 1.1rem;
   right: 1.3rem;
   font-size: 1.5rem;
-  color: #3f37c9;
+  color: #c93737;
   cursor: pointer;
   font-weight: bold;
   transition: color 0.2s;
 }
 .close:hover {
-  color: #232946;
+  color: #462323;
 }
 .modal-content h2 {
   margin: 0 0 0.7rem 0;
   font-size: 1.3rem;
-  color: #232946;
+  color: #462323;
 }
 .modal-content form {
   display: flex;
@@ -55,7 +55,7 @@
 .modal-content textarea {
   padding: 0.5rem 0.7rem;
   border-radius: 8px;
-  border: 1px solid #bfc6e0;
+  border: 1px solid #e0bfbf;
   font-size: 1rem;
   font-family: inherit;
   margin-top: 0.2rem;
@@ -67,7 +67,7 @@
   max-height: 180px;
 }
 .modal-content button[type='submit'] {
-  background: linear-gradient(90deg, #5f6fff 0%, #3f37c9 100%);
+  background: linear-gradient(90deg, var(--btn-color1) 0%, var(--btn-color2) 100%);
   color: #fff;
   border: none;
   border-radius: 999px;
@@ -78,7 +78,7 @@
   margin-top: 0.7rem;
   align-self: flex-end;
   transition: transform 0.2s;
-  box-shadow: 0 2px 8px rgba(95, 111, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(var(--background-page), 0.1);
 }
 .modal-content button[type='submit']:hover {
   transform: translateY(-2px) scale(1.04);

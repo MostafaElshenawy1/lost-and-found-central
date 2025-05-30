@@ -1,8 +1,24 @@
+:root{
+  --nav-color1: #a93044;
+  --nav-color2: #a32035;
+  --nav-brand-hover: #ffb600;
+  --nav-link-hover: 130,5,41;
+  --body-text: #292121;
+  --btn-color1: #d7403b;
+  --btn-color2: #cd6f65;
+  --header-color: #751a17;
+  --hero-text: #625353;
+  --background-page: 255, 95, 95;
+  --norm-text: #242424;
+  --link: #b30738;
+  --link-hover: #690421;
+}
+
 body {
   font-family: 'Poppins', Arial, sans-serif;
   margin: 0;
-  background: linear-gradient(135deg, #e0e7ff 0%, #f7f7f7 100%);
-  color: #232946;
+  background: linear-gradient(135deg, #ffd6d6 0%, #fff0f0 100%);  
+  color: var(--body-text);
 }
 
 header {
@@ -18,14 +34,14 @@ main {
 }
 
 .view-all-btn {
-  background: linear-gradient(90deg, #5f6fff 0%, #3f37c9 100%);
+  background: linear-gradient(90deg, #882d3c 0%, #751727 100%);
   color: #fff;
   padding: 0.6rem 1.5rem;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
-  box-shadow: 0 2px 8px rgba(95, 111, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(255, 95, 95, 0.1);
   border: none;
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
   display: inline-block;
@@ -33,9 +49,9 @@ main {
 
 .view-all-btn:hover,
 .view-all-btn:focus {
-  background: linear-gradient(90deg, #3f37c9 0%, #5f6fff 100%);
+  background: linear-gradient(90deg, #751727 0%, #882d3c 100%);
   transform: translateY(-2px) scale(1.04);
-  box-shadow: 0 4px 16px rgba(95, 111, 255, 0.18);
+  box-shadow: 0 4px 16px rgba(255, 103, 95, 0.18);
 }
 
 @media (max-width: 700px) {
@@ -49,9 +65,9 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #232946 0%, #1a1f3a 100%);
+  background: linear-gradient(135deg, var(--nav-color1) 0%, var(--nav-color2) 100%);
   padding: 1rem 2rem;
-  box-shadow: 0 4px 32px rgba(35, 41, 70, 0.15);
+  box-shadow: 0 4px 32px rgba(70, 43, 35, 0.15);
   position: sticky;
   top: 0;
   z-index: 20;
@@ -68,7 +84,8 @@ main {
 }
 
 .navbar-brand:hover {
-  color: #5f6fff;
+  /*color: #5f6fff;*/
+  color: var(--nav-brand-hover);
 }
 
 .navbar-center {
@@ -78,7 +95,7 @@ main {
 }
 
 .nav-link {
-  color: #e0e7ff;
+  color: #ffe0e0;
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
@@ -91,7 +108,7 @@ main {
 .nav-link:hover,
 .nav-link.active {
   color: #fff;
-  background: rgba(95, 111, 255, 0.2);
+  background: var(--nav-link-hover);
   transform: translateY(-1px);
 }
 
@@ -103,7 +120,7 @@ main {
   transform: translateX(-50%);
   width: 4px;
   height: 4px;
-  background: #5f6fff;
+  background: var(--btn-color2);
   border-radius: 50%;
 }
 
@@ -114,7 +131,7 @@ main {
 }
 
 .nav-btn {
-  background: linear-gradient(135deg, #5f6fff 0%, #3f37c9 100%);
+  background: linear-gradient(135deg, var(--btn-color2) 0%, var(--btn-color1) 100%);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -123,7 +140,7 @@ main {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 12px rgba(95, 111, 255, 0.2);
+  box-shadow: 0 2px 12px rgba(255, 95, 95, 0.2);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -132,9 +149,9 @@ main {
 
 .nav-btn:hover,
 .nav-btn:focus {
-  background: linear-gradient(135deg, #3f37c9 0%, #5f6fff 100%);
+  background: linear-gradient(135deg, var(--btn-color1) 0%, var(--btn-color2) 100%);
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(95, 111, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(77, 5, 5, 0.3);
 }
 
 .nav-btn.primary {
