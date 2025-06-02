@@ -1,0 +1,88 @@
+<?php
+$databaseFile = __DIR__.'/../items.db';
+
+if (file_exists($databaseFile)) {
+    if (unlink($databaseFile)) {
+        echo "Existing database 'items.db' deleted.<br>";
+    } else {
+        echo "Failed to delete existing database.<br>";
+    }
+}
+
+try {
+    //making a new database also deletes any leftover images made by users
+    $imagesDir = __DIR__ . '/../../assets/images/useruploads';
+    if (is_dir($imagesDir)) {
+        $files = glob($imagesDir . '/*');
+        foreach ($files as $file) {
+            if (is_file($file)) {
+                unlink($file); // delete file
+            }
+        }
+        echo "All files in assets/images/useruploads deleted.<br>";
+    } else {
+        echo "Directory assets/images/useruploads does not exist.<br>";
+    }
+    $pdo = new PDO('sqlite:' . $databaseFile);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $qry = "
+    CREATE TABLE IF NOT EXISTS items (
+        idcode INTEGER PRIMARY KEY AUTOINCREMENT,
+        type VARCHAR(10) NOT NULL,
+        title VARCHAR(100) NOT NULL,
+        image VARCHAR(255) NOT NULL,
+        contact VARCHAR(150) NOT NULL,
+        location VARCHAR(250),
+        description VARCHAR(350),
+        passphrase VARCHAR(100),
+        date_posted DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
+    ";
+    $pdo->exec($qry);
+    echo "db was created succesfully!<br>";
+
+    if (!file_exists('../items.json')) {
+        echo "Error: JSON file not found";
+        exit;
+    }
+
+    $itemsJSON = file_get_contents('../items.json');
+    $itemsD = json_decode($itemsJSON, true);
+
+
+    $insertQry = "INSERT INTO items (type, title, image, contact, location, description, passphrase, date_posted ) VALUES (:type, :title, :image, :contact, :location, :description, :passphrase, :date_posted )";
+    $st = $pdo->prepare($insertQry);
+
+    foreach ($itemsD as $item) {
+        
+        $type = $item['type'];
+        $title = $item['title'];
+        $image = $item['image'];
+        $contact = $item['contact'];
+        $location = $item['location'];
+        $description = $item['description'];
+        $passphrase = $item['passphrase'];
+        $date_posted = $item['date_posted'];
+        
+        $st->bindParam(':type', $type);
+        $st->bindParam(':title', $title);
+        $st->bindParam(':image', $image);
+        $st->bindParam(':contact', $contact);
+        $st->bindParam(':location', $location);
+        $st->bindParam(':description', $description);
+        $st->bindParam(':passphrase', $passphrase);
+        $st->bindParam(':date_posted', $date_posted);
+
+        $st->execute();
+
+       echo "Inserted item: \"$title\"<br>";
+    }
+    $testQ = $pdo->query("SELECT * FROM items");
+    $r = $testQ->fetchAll(PDO::FETCH_ASSOC);
+    echo "<br>Result of test:<br>";
+    var_dump($r); 
+}
+catch (PDOException $e){
+    echo "error ".$e->getMessage();
+}
