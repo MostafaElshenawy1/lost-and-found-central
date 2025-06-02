@@ -31,7 +31,7 @@ try {
 
     $qry = "
     CREATE TABLE items (
-        idcode INTEGER PRIMARY KEY AUTOINCREMENT,
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
         type VARCHAR(10) NOT NULL,
         title VARCHAR(100) NOT NULL,
         image VARCHAR(255) NOT NULL,
