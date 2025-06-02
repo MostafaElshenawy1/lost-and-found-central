@@ -44,12 +44,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':description' => $description,
             ':passphrase' => $passphrase
         ]);
-
+/* // THIS IS FOR DEBUG
         echo "Item posted successfully!";
         $result = $pdo->query("SELECT * FROM items ORDER BY id DESC LIMIT 1");
         $latestItem = $result->fetch(PDO::FETCH_ASSOC);
 
-        //this will not be part of the final implementation
         if ($latestItem) {
             echo "<strong>Latest item added:</strong><br>";
             echo "ID: " . htmlspecialchars($latestItem['id']) . "<br>";
@@ -66,6 +65,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             echo "No items found in database.";
         }
+            */
+
+        header('Location: ../../index.php');
+        exit;
     } catch (Exception $e) {
         if (isset($fullPath) && file_exists($fullPath)) {
             unlink($fullPath);
