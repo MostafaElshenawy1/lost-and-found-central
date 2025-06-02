@@ -97,43 +97,48 @@
         </div>
       </section>
     </main>
-    <!-- Modal for posting lost item -->
+     <!-- Modal for posting lost item -->
     <div class="modal" id="lost-modal">
       <div class="modal-content">
         <span class="close" data-modal="lost-modal">&times;</span>
         <h2>Post Lost Item</h2>
-        <form id="lost-form">
-          <label>Title<input type="text" name="title" required /></label>
+        <form action="../assets/php/submit_item.php" method="POST" enctype="multipart/form-data" id="lost-form">
+          <input type="hidden" name="type" value="lost">
+          <label>Title<input type="text" name="title" maxlength="100" required /></label>
           <label
             >Image <input type="file" name="image" accept="image/*" required
           /></label>
           <label
-            >Description<textarea name="description" required></textarea>
+            >Description<textarea name="description" maxlength="350"></textarea>
           </label>
-          <label>Location<input type="text" name="location" required /></label>
+          <label>Location<input type="text" name="location" maxlength="250" /></label>
           <label
-            >Contact Email<input type="email" name="contact" required
+            >Contact Email<input type="email" name="contact" maxlength="150" required
           /></label>
           <button type="submit">Submit</button>
         </form>
       </div>
     </div>
+
+    
+
     <!-- Modal for posting found item -->
     <div class="modal" id="found-modal">
       <div class="modal-content">
         <span class="close" data-modal="found-modal">&times;</span>
         <h2>Post Found Item</h2>
-        <form id="found-form">
-          <label>Title<input type="text" name="title" required /></label>
+        <form action="../assets/php/submit_item.php" method="POST" enctype="multipart/form-data" id="found-form">
+          <input type="hidden" name="type" value="found">
+          <label>Title<input type="text" name="title" maxlength="100" required /></label>
           <label
             >Image <input type="file" name="image" accept="image/*" required
           /></label>
           <label
-            >Description<textarea name="description" required></textarea>
+            >Description<textarea name="description" maxlength="350" required></textarea>
           </label>
-          <label>Location<input type="text" name="location" required /></label>
+          <label>Location<input type="text" name="location" maxlength="250" required /></label>
           <label
-            >Contact Email<input type="email" name="contact" required
+            >Contact Email<input type="email" name="contact" maxlength="150" required
           /></label>
           <button type="submit">Submit</button>
         </form>
