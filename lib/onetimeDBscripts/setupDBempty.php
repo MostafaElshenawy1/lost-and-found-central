@@ -12,7 +12,7 @@ if (file_exists($databaseFile)) {
 
 try {
     //making a new database also deletes any leftover images made by users
-    $imagesDir = __DIR__ . '../../assets/images/useruploads';
+    $imagesDir = __DIR__ . '/../../assets/images/useruploads';
     if (is_dir($imagesDir)) {
         $files = glob($imagesDir . '/*');
         foreach ($files as $file) {
