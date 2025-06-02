@@ -1,45 +1,50 @@
 <?php
-// Load data from combined JSON file
-$json = file_get_contents('../lib/items.json');
-$items = json_decode($json, true);
+// Connect to the SQLite database in the parent folder's lib directory
+try{
+    
+    $pdo = new PDO('sqlite:../lib/items.db');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// Filter and limit items
-$lost_items = array_filter($items, function($item) {
-    return $item['type'] === 'lost';
-});
-$found_items = array_filter($items, function($item) {
-    return $item['type'] === 'found';
-});
+    // Fetch lost items
+    $stmt_lost = $pdo->prepare("SELECT id, title, image FROM items WHERE type = 'lost' ORDER BY id DESC");
+    $stmt_lost->execute();
+    $lost_items = $stmt_lost->fetchAll(PDO::FETCH_ASSOC);
 
-// Reindex arrays after filtering
-$lost_items = array_values($lost_items);
-$found_items = array_values($found_items);
+    // Fetch found items
+    $stmt_found = $pdo->prepare("SELECT id, title, image FROM items WHERE type = 'found' ORDER BY id DESC");
+    $stmt_found->execute();
+    $found_items = $stmt_found->fetchAll(PDO::FETCH_ASSOC);
 
-// Build HTML for lost items
-$lost_items_html = '';
-foreach ($lost_items as $item) {
-    $lost_items_html .= '<div class="slide" onclick="window.location.href=\'detail.php?id=' . htmlspecialchars($item['id']) . '\'">';
-    $lost_items_html .= '<img src="../assets/images/' . htmlspecialchars($item['image']) . '" alt="' . htmlspecialchars($item['title']) . '" />';
-    $lost_items_html .= '<p>' . htmlspecialchars($item['title']) . '</p>';
-    $lost_items_html .= '</div>';
+    // Build HTML for lost items
+    $lost_items_html = '';
+    
+    foreach ($lost_items as $item) {
+        
+        $lost_items_html .= '<div class="slide" onclick="window.location.href=\'detail.php?id=' . htmlspecialchars($item['id']) . '\'">';
+        $lost_items_html .= '<img src="../assets/images/useruploads/' . htmlspecialchars($item['image']) . '" alt="' . htmlspecialchars($item['title']) . '" />';
+        $lost_items_html .= '<p>' . htmlspecialchars($item['title']) . '</p>';
+        $lost_items_html .= '</div>';
+    }
+
+    // Build HTML for found items
+    $found_items_html = '';
+    foreach ($found_items as $item) {
+        $found_items_html .= '<div class="slide" onclick="window.location.href=\'detail.php?id=' . htmlspecialchars($item['id']) . '\'">';
+        $found_items_html .= '<img src="../assets/images/useruploads/' . htmlspecialchars($item['image']) . '" alt="' . htmlspecialchars($item['title']) . '" />';
+        $found_items_html .= '<p>' . htmlspecialchars($item['title']) . '</p>';
+        $found_items_html .= '</div>';
+    }
+
+    // Load the template
+    $template = file_get_contents('../templates/home.html');
+
+    // Replace placeholders with dynamic content
+    $template = str_replace('<!-- LOST_ITEMS_PLACEHOLDER -->', $lost_items_html, $template);
+    $template = str_replace('<!-- FOUND_ITEMS_PLACEHOLDER -->', $found_items_html, $template);
+
+    // Output the final HTML
+    echo $template;
+} catch (PDOException $e) {
+    echo "Database error: " . $e->getMessage();
 }
-
-// Build HTML for found items
-$found_items_html = '';
-foreach ($found_items as $item) {
-    $found_items_html .= '<div class="slide" onclick="window.location.href=\'detail.php?id=' . htmlspecialchars($item['id']) . '\'">';
-    $found_items_html .= '<img src="../assets/images/' . htmlspecialchars($item['image']) . '" alt="' . htmlspecialchars($item['title']) . '" />';
-    $found_items_html .= '<p>' . htmlspecialchars($item['title']) . '</p>';
-    $found_items_html .= '</div>';
-}
-
-// Load the template
-$template = file_get_contents('../templates/home.html');
-
-// Replace placeholders with dynamic content
-$template = str_replace('<!-- LOST_ITEMS_PLACEHOLDER -->', $lost_items_html, $template);
-$template = str_replace('<!-- FOUND_ITEMS_PLACEHOLDER -->', $found_items_html, $template);
-
-// Output the final HTML
-echo $template;
 ?>
