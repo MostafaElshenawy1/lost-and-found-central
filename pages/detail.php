@@ -1,14 +1,19 @@
 <?php
 $item = null;
+
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $json = file_get_contents('../lib/items.json');
-    $items = json_decode($json, true);
-    foreach ($items as $entry) {
-        if ($entry['id'] === $id) {
-            $item = $entry;
-            break;
-        }
+
+    try {
+        $pdo = new PDO('sqlite:../lib/items.db');
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $pdo->prepare("SELECT * FROM items WHERE id = :id");
+        $stmt->execute([':id' => $id]);
+        $item = $stmt->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        echo "Database error: " . $e->getMessage();
+        exit;
     }
 }
 
@@ -34,10 +39,10 @@ $item_content = '';
 
 if ($item) {
     $item_content .= '<div class="detail-container">';
-    $item_content .= '<img src="../assets/images/' . htmlspecialchars($item['image']) . '" alt="' . htmlspecialchars($item['title']) . '" />';
+    $item_content .= '<img src="../assets/images/useruploads/' . htmlspecialchars($item['image']) . '" alt="' . htmlspecialchars($item['title']) . '" />';
     $item_content .= '<p><strong>' . htmlspecialchars($item['title']) . '</strong></p>';
     $item_content .= '<p>' . htmlspecialchars($item['description']) . '</p>';
-    $item_content .= '<p><em>Status:</em> <span class="status ' . $item['type'] . '">' . ucfirst(htmlspecialchars($item['type'])) . '</span></p>';
+    $item_content .= '<p><em>Status:</em> <span class="status ' . htmlspecialchars($item['type']) . '">' . ucfirst(htmlspecialchars($item['type'])) . '</span></p>';
     $item_content .= '<p><em>Location:</em> ' . htmlspecialchars($item['location']) . '</p>';
     $item_content .= '<p><em>Contact:</em> <a href="mailto:' . htmlspecialchars($item['contact']) . '">' . htmlspecialchars($item['contact']) . '</a></p>';
     $item_content .= '</div>';
