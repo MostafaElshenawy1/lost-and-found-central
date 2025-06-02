@@ -31,7 +31,7 @@ document.querySelectorAll('.modal').forEach((modal) => {
     if (e.target === modal) hideModal(modal.id);
   });
 });
-
+/*
 // Handle form submissions
 if (document.getElementById('lost-form')) {
   document.getElementById('lost-form').addEventListener('submit', (e) => {
@@ -50,3 +50,4 @@ if (document.getElementById('found-form')) {
     hideModal('found-modal');
   });
 }
+*/
