@@ -44,13 +44,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ]);
 
         echo "Item posted successfully!";
-        $result = $pdo->query("SELECT * FROM items ORDER BY idcode DESC LIMIT 1");
+        $result = $pdo->query("SELECT * FROM items ORDER BY id DESC LIMIT 1");
         $latestItem = $result->fetch(PDO::FETCH_ASSOC);
 
         //this will not be part of the final implementation
         if ($latestItem) {
             echo "<strong>Latest item added:</strong><br>";
-            echo "ID: " . htmlspecialchars($latestItem['idcode']) . "<br>";
+            echo "ID: " . htmlspecialchars($latestItem['id']) . "<br>";
             echo "Type: " . htmlspecialchars($latestItem['type']) . "<br>";
             echo "Title: " . htmlspecialchars($latestItem['title']) . "<br>";
             echo "Image: <img src='" . htmlspecialchars($latestItem['image']) . "' width='150'><br>";
