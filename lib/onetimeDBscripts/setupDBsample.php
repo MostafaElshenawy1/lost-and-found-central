@@ -23,6 +23,22 @@ try {
     } else {
         echo "Directory assets/images/useruploads does not exist.<br>";
     }
+    
+    $sourceDir = '../../assets/images/';
+    $targetDir = '../../assets/images/useruploads/';
+    $imageName = 'image.jpg';
+    $sourcePath = $sourceDir . $imageName;
+    $targetPath = $targetDir . $imageName;
+    if (file_exists($sourcePath)) {
+        if (copy($sourcePath, $targetPath)) {
+            echo "Image copied successfully from $sourcePath to $targetPath";
+        } else {
+            echo "Failed to copy image.";
+        }
+    } else {
+        echo "Source image does not exist.";
+    }
+
     $pdo = new PDO('sqlite:' . $databaseFile);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
