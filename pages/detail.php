@@ -45,6 +45,19 @@ if ($item) {
     $item_content .= '<p><em>Status:</em> <span class="status ' . htmlspecialchars($item['type']) . '">' . ucfirst(htmlspecialchars($item['type'])) . '</span></p>';
     $item_content .= '<p><em>Location:</em> ' . htmlspecialchars($item['location']) . '</p>';
     $item_content .= '<p><em>Contact:</em> <a href="mailto:' . htmlspecialchars($item['contact']) . '">' . htmlspecialchars($item['contact']) . '</a></p>';
+
+    $item_content .= '<hr>';
+    $item_content .= '<form action="delete.php" method="POST" onsubmit="return confirm(\'Are you sure the own receive the item?\')">';
+    $item_content .= '<input type="hidden" name="id" value="' . htmlspecialchars($item['id']) . '">';
+    $item_content .= '<label><strong>Enter PIN # if you the owner received the item:</strong> ';
+    $item_content .= '<br>';
+    $item_content .= '<input type="password" name="pin" maxlength="9" pattern="\\d{1,9}" required placeholder="Max 9-digit PIN">';
+    $item_content .= '<br>';
+    $item_content .= '</label>';
+
+    $item_content .= '<br><button type="submit" class="delete-btn">Item Found!</button>';
+    $item_content .= '</form>';
+
     $item_content .= '</div>';
 } else {
     $item_content .= '<div class="error-container">';

@@ -96,3 +96,17 @@
     max-width: 100%;
   }
 }
+
+.delete-btn {
+  margin-top: 10px;
+  background-color: var(--nav-color1);
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: var(--nav-color2);
+}
