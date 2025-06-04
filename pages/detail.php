@@ -49,7 +49,7 @@ if ($item) {
     $item_content .= '<hr>';
     $item_content .= '<form action="delete.php" method="POST" onsubmit="return confirm(\'Are you sure the own receive the item?\')">';
     $item_content .= '<input type="hidden" name="id" value="' . htmlspecialchars($item['id']) . '">';
-    $item_content .= '<label><strong>Enter PIN # if item has been returned to owner:</strong> ';
+    $item_content .= '<label><strong>Item claimed? Enter pin:</strong> ';
     $item_content .= '<br>';
     $item_content .= '<input type="password" name="pin" maxlength="9" pattern="\\d{1,9}" required placeholder="Max 9-digit PIN">';
     $item_content .= '<br>';
