@@ -47,7 +47,7 @@ if ($item) {
     $item_content .= '<p><em>Contact:</em> <a href="mailto:' . htmlspecialchars($item['contact']) . '">' . htmlspecialchars($item['contact']) . '</a></p>';
 
     $item_content .= '<hr>';
-    $item_content .= '<form action="delete.php" method="POST" onsubmit="return confirm(\'Are you sure the own receive the item?\')">';
+    $item_content .= '<form action="delete.php" method="POST" onsubmit="return confirm(\'Are you sure the owner received the item?\')">';
     $item_content .= '<input type="hidden" name="id" value="' . htmlspecialchars($item['id']) . '">';
     $item_content .= '<label><strong>Item claimed? Enter pin:</strong> ';
     $item_content .= '<br>';
