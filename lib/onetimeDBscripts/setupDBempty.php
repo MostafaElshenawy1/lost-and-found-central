@@ -1,6 +1,9 @@
 <?php
 $databaseFile =__DIR__ . '/../items.db';
 
+//this makes an empty database for the site. 
+//this script will be run once by the site owner to set up the db for all users
+//the end user would NEVER have access to this script in reality (but I am leaving it here so you can see the code)
 if (file_exists($databaseFile)) {
     if (unlink($databaseFile)) {
         echo "Existing database items.db deleted.<br>";
