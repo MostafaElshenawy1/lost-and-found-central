@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($item['passphrase'] !== $ipp) {
             echo "<script>
             alert('Incorrect pin. Item was not deleted.');
-            window.location.href = '../index.php';
+            window.location.href = '../../index.php';
             </script>";
             exit;
         }
