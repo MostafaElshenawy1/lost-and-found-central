@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
         //look for the needed item
-        $st = $pdo->prepare("SELECT passphrase FROM items WHERE id = :id");
+        $st = $pdo->prepare("SELECT passphrase, image FROM items WHERE id = :id");
         $st->execute([':id' => $id]);
         $item = $st->fetch(PDO::FETCH_ASSOC);
         //if the item no longer exists or not found:
@@ -36,7 +36,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //this only runs if pin is correct
         $delst = $pdo->prepare("DELETE FROM items WHERE id = :id");
         $delst->execute([':id' => $id]);
-        header('Location: ../../index.php');
+        $in = $item['image'];
+        $ip=$uploadDir.$in;
+        if (file_exists($ip)) {
+            unlink($ip);
+        }
+        echo "<script>
+            alert('Item succesfully claimed! WOOHOO🎉 🎉 🎉 ');
+            window.location.href = '../../index.php';
+            </script>";
         exit;
     }
     catch (PDOException $e) {
