@@ -47,11 +47,11 @@ if ($item) {
     $item_content .= '<p><em>Contact:</em> <a href="mailto:' . htmlspecialchars($item['contact']) . '">' . htmlspecialchars($item['contact']) . '</a></p>';
 
     $item_content .= '<hr>';
-    $item_content .= '<form action="../assets/php/delete_item.php" method="POST" enctype="multipart/form-data" >';
+    $item_content .= '<form action="../assets/php/delete_item.php" method="POST" onsubmit="return confirm(\'Are you sure the item has been claimed by its owner? This will permanently delete the posting\');">';
     $item_content .= '<input type="hidden" name="id" value="' . htmlspecialchars($item['id']) . '">';
-    $item_content .= '<label><strong>Item claimed? Enter pin:</strong> ';
+    $item_content .= '<label for="passphrase"><strong>Item claimed? Enter pin:</strong> ';
     $item_content .= '<br>';
-    $item_content .= '<input type="password" name="pin" maxlength="9" pattern="\\d{1,9}" required placeholder="Max 9-digit PIN">';
+    $item_content .= '<input type="password" name="passphrase" id="passphrase" maxlength="9" pattern="\\d{1,9}" required placeholder="Max 9-digit PIN">';
     $item_content .= '<br>';
     $item_content .= '</label>';
 
