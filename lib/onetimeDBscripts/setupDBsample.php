@@ -1,6 +1,7 @@
 <?php
 $databaseFile = __DIR__.'/../items.db';
-
+//this makes a db that is full of sample items from a json for testing purposes
+//normally, we would set up with the other script because none of these items were actually lost or found by real people
 if (file_exists($databaseFile)) {
     if (unlink($databaseFile)) {
         echo "Existing database 'items.db' deleted.<br>";
@@ -42,6 +43,7 @@ try {
     $pdo = new PDO('sqlite:' . $databaseFile);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    //im making this db using a similar strategy to lab 5
     $qry = "
     CREATE TABLE IF NOT EXISTS items (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -66,7 +68,7 @@ try {
     $itemsJSON = file_get_contents('../items.json');
     $itemsD = json_decode($itemsJSON, true);
 
-
+    
     $insertQry = "INSERT INTO items (type, title, image, contact, location, description, passphrase, date_posted ) VALUES (:type, :title, :image, :contact, :location, :description, :passphrase, :date_posted )";
     $st = $pdo->prepare($insertQry);
 
