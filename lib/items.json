@@ -6,7 +6,7 @@
     "description": "A blue reusable water bottle with a dent on the cap.",
     "location": "Library, 2nd Floor",
     "contact": "owner1@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -16,7 +16,7 @@
     "description": "Black backpack with a laptop compartment and a keychain.",
     "location": "Cafeteria",
     "contact": "owner2@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -26,7 +26,7 @@
     "description": "iPhone 12 in a clear case, minor scratches on the back.",
     "location": "Gym Locker Room",
     "contact": "owner3@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -36,7 +36,7 @@
     "description": "Bright red umbrella with a wooden handle.",
     "location": "Main Entrance",
     "contact": "owner4@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -46,7 +46,7 @@
     "description": "Three keys on a blue keyring, one with a smiley sticker.",
     "location": "Parking Lot B",
     "contact": "owner5@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -56,7 +56,7 @@
     "description": "Calculus textbook, name written inside cover.",
     "location": "Room 204",
     "contact": "owner6@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -66,7 +66,7 @@
     "description": "Delicate silver bracelet with heart charm.",
     "location": "Restroom near Cafeteria",
     "contact": "owner7@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -76,7 +76,7 @@
     "description": "White wireless earbuds case, no earbuds inside.",
     "location": "Bus Stop",
     "contact": "owner8@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -86,7 +86,7 @@
     "description": "Olive green jacket, medium size, zipper broken.",
     "location": "Science Building",
     "contact": "owner9@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -96,7 +96,7 @@
     "description": "University student ID card, name: Alex M.",
     "location": "Library Front Desk",
     "contact": "owner10@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -106,7 +106,7 @@
     "description": "Blue water bottle found near the vending machines.",
     "location": "Student Lounge",
     "contact": "finder1@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -116,7 +116,7 @@
     "description": "Leather wallet with several cards inside.",
     "location": "Parking Garage",
     "contact": "finder2@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -126,7 +126,7 @@
     "description": "13-inch laptop, sticker on the lid.",
     "location": "Lecture Hall 3",
     "contact": "finder3@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -136,7 +136,7 @@
     "description": "Woolen red scarf, slightly frayed at the ends.",
     "location": "Cafeteria",
     "contact": "finder4@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -146,7 +146,7 @@
     "description": "Set of keys with a car fob and a gym tag.",
     "location": "Library Lost & Found",
     "contact": "finder5@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -156,7 +156,7 @@
     "description": "Spiral notebook, lots of handwritten notes inside.",
     "location": "Room 101",
     "contact": "finder6@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -166,7 +166,7 @@
     "description": "Simple gold ring, no engravings.",
     "location": "Restroom near Main Hall",
     "contact": "finder7@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -176,7 +176,7 @@
     "description": "Black wireless mouse, battery cover missing.",
     "location": "Computer Lab",
     "contact": "finder8@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -186,7 +186,7 @@
     "description": "Green bottle with a sticker, found under a bench.",
     "location": "Playground",
     "contact": "finder9@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   },
   {
@@ -196,7 +196,7 @@
     "description": "Student ID card, name: Sarah L.",
     "location": "Security Office",
     "contact": "finder10@email.com",
-    "passphrase": "test passphrase",
+    "passphrase": "123",
     "date_posted": "2025-06-02 03:55:30" 
   }
 ]
