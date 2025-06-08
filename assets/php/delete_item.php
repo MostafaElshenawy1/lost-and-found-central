@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $delst->execute([':id' => $id]);
         $in = $item['image'];
         $ip=$uploadDir.$in;
-        if (file_exists($ip)) {
+        if ($in != 'image.jpg' && file_exists($ip)) {
             unlink($ip);
         }
         echo "<script>
