@@ -6,13 +6,27 @@ try{
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Fetch lost items
-    $stmt_lost = $pdo->prepare("SELECT id, title, image FROM items WHERE type = 'lost' ORDER BY id DESC");
-    $stmt_lost->execute();
+    $searchTerm = $_GET['search'] ?? '';
+    if (!empty($searchTerm)) {
+        $like = '%' . $searchTerm . '%';
+        $stmt_lost = $pdo->prepare("SELECT id, title, image FROM items WHERE type = 'lost' AND (title LIKE :search OR description LIKE :search) ORDER BY id DESC");
+        $stmt_lost->execute([':search' => $like]);
+    } else {
+        $stmt_lost = $pdo->prepare("SELECT id, title, image FROM items WHERE type = 'lost' ORDER BY id DESC");
+        $stmt_lost->execute();
+    }
     $lost_items = $stmt_lost->fetchAll(PDO::FETCH_ASSOC);
 
     // Fetch found items
-    $stmt_found = $pdo->prepare("SELECT id, title, image FROM items WHERE type = 'found' ORDER BY id DESC");
-    $stmt_found->execute();
+    $searchTerm = $_GET['search'] ?? '';
+    if (!empty($searchTerm)) {
+        $like = '%' . $searchTerm . '%';
+        $stmt_found = $pdo->prepare("SELECT id, title, image FROM items WHERE type = 'found' AND (title LIKE :search OR description LIKE :search) ORDER BY id DESC");
+        $stmt_found->execute([':search' => $like]);
+    } else {
+        $stmt_found = $pdo->prepare("SELECT id, title, image FROM items WHERE type = 'found' ORDER BY id DESC");
+        $stmt_found->execute();
+    }
     $found_items = $stmt_found->fetchAll(PDO::FETCH_ASSOC);
 
     // Build HTML for lost items
