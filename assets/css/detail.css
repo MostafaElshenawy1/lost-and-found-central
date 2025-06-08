@@ -1,4 +1,37 @@
 /* Detail page styles */
+
+html, body {
+  height: 100%;
+}
+
+form label[for="passphrase"] {
+  display: block;
+  margin-top: 1.2rem;
+  font-weight: 500;
+  color: var(--norm-text);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+#passphrase {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: inherit;
+  width: 100%;
+  max-width: 300px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+#passphrase:focus {
+  border-color: var(--btn-color1);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(215, 64, 59, 0.2);
+}
+
 .detail-container {
   max-width: 500px;
   margin: 2.5rem auto;
