@@ -12,6 +12,7 @@ if (isset($_GET['id'])) {
         $stmt->execute([':id' => $id]);
         $item = $stmt->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
+        http_response_code(500);
         echo "Database error: " . $e->getMessage();
         exit;
     }
