@@ -164,14 +164,7 @@ main {
   box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-input[type=number] {
-  -moz-appearance: textfield;
-}
+
 
 /* Mobile responsive */
 @media (max-width: 768px) {
