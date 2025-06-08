@@ -50,6 +50,7 @@ try{
   // Output the final HTML
   echo $template;
 } catch (PDOException $e) {
+  http_response_code(500);
     echo "Database error: " . $e->getMessage();
 }
 ?>
