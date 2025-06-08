@@ -73,6 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($fullPath) && file_exists($fullPath)) {
             unlink($fullPath);
         }
+        http_response_code(500);
         echo "Error: " . $e->getMessage();
     }
 } else {
