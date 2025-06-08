@@ -5,9 +5,16 @@ try{
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
   // Fetch all lost items
-  $stmt = $pdo->prepare("SELECT id, title, image, description, contact, location FROM items WHERE type = 'lost' ORDER BY id DESC");
-  $stmt->execute();
-  $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $searchTerm = $_GET['search'] ?? '';
+    if (!empty($searchTerm)) {
+        $like = '%' . $searchTerm . '%';
+        $stmt_lost = $pdo->prepare("SELECT * FROM items WHERE type = 'lost' AND (title LIKE :search OR description LIKE :search) ORDER BY id DESC");
+        $stmt_lost->execute([':search' => $like]);
+    } else {
+        $stmt_lost = $pdo->prepare("SELECT * FROM items WHERE type = 'lost' ORDER BY id DESC");
+        $stmt_lost->execute();
+    }
+  $items = $stmt_lost->fetchAll(PDO::FETCH_ASSOC);
 
   // Build content HTML
   $items_html = '';
@@ -24,8 +31,16 @@ try{
   // Load the unified template
   $template = file_get_contents('../templates/LostFound.html');
 
+  $search_form_html = '
+  <form method="GET" action="lost.php" style="margin: 1rem 0;">
+    <input type="text" name="search" placeholder="Search items..." value="' . htmlspecialchars($searchTerm) . '" />
+    <button type="submit">Search</button>
+    <button type="button" onclick="window.location.href = window.location.pathname;">Reset</button>
+  </form>';
+
   // Replace placeholders with content
   $template = str_replace('<!-- PAGE_TITLE -->', 'Lost Items', $template);
+  $template = str_replace('<!-- SEARCH_FORM -->', $search_form_html, $template);
   $template = str_replace('<!-- PAGE_HEADING -->', '🔍 Lost Items', $template);
   $template = str_replace('<!-- PAGE_SUBTITLE -->', 'Help reunite people with their missing belongings. Browse through items that people have lost and see if you can help.', $template);
   $template = str_replace('<!-- LOST_ACTIVE -->', 'active', $template);
