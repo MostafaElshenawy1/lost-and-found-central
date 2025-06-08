@@ -48,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
     catch (PDOException $e) {
+        http_response_code(500);
         echo "Database error: " . $e->getMessage();
     }
 }
