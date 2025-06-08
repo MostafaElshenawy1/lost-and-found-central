@@ -61,7 +61,7 @@ lost-and-found-central/
 1. Clone the repository
 2. Place the files in your web server's document root
 3. In your web browser, run one of the 2 scripts in onetimeDBscripts in order to setup the DB. You must either be in the ECC (best) or connected to localhost somehow.
-    a. Do not run this script again unless you aim to completely reset the DB.
+    (Do not run this script again unless you aim to completely reset the DB)
 4. Ensure all permissions are wide enough, including the new db file.
 5. Navigate to the project URL in your browser.
 
