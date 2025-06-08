@@ -1,7 +1,7 @@
 <?php
 $databaseFile =__DIR__ . '/../items.db';
 
-//this makes an empty database for the site. 
+//this makes an empty database for the site.
 //this script will be run once by the site owner to set up the db for all users
 //the end user would NEVER have access to this script in reality (but I am leaving it here so you can see the code)
 if (file_exists($databaseFile)) {
@@ -27,19 +27,19 @@ try {
     } else {
         echo "Directory assets/images/useruploads does not exist.<br>";
     }
-    $sourceDir = '../../assets/images/';
-    $targetDir = '../../assets/images/useruploads/';
+    $sourceDir = __DIR__ . '/../../assets/images/';
+    $targetDir = __DIR__ . '/../../assets/images/useruploads/';
     $imageName = 'image.jpg';
     $sourcePath = $sourceDir . $imageName;
     $targetPath = $targetDir . $imageName;
     if (file_exists($sourcePath)) {
         if (copy($sourcePath, $targetPath)) {
-            echo "Image copied successfully from $sourcePath to $targetPath";
+            echo "Image copied successfully from $sourcePath to $targetPath<br>";
         } else {
-            echo "Failed to copy image.";
+            echo "Failed to copy image.<br>";
         }
     } else {
-        echo "Source image does not exist.";
+        echo "Source image does not exist.<br>";
     }
     $pdo = new PDO('sqlite:' . $databaseFile);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -65,7 +65,7 @@ try {
 
     $testQ = $pdo->query("SELECT * FROM items");
     $rows = $testQ->fetchAll(PDO::FETCH_ASSOC);
-    echo "Current number of rows: " . count($rows);
+    echo "Current number of rows: " . count($rows) . "<br>";
 
 } catch (PDOException $e) {
     echo "error " . $e->getMessage();

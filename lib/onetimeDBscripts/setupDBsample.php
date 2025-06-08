@@ -24,20 +24,20 @@ try {
     } else {
         echo "Directory assets/images/useruploads does not exist.<br>";
     }
-    
-    $sourceDir = '../../assets/images/';
-    $targetDir = '../../assets/images/useruploads/';
+
+    $sourceDir = __DIR__ . '/../../assets/images/';
+    $targetDir = __DIR__ . '/../../assets/images/useruploads/';
     $imageName = 'image.jpg';
     $sourcePath = $sourceDir . $imageName;
     $targetPath = $targetDir . $imageName;
     if (file_exists($sourcePath)) {
         if (copy($sourcePath, $targetPath)) {
-            echo "Image copied successfully from $sourcePath to $targetPath";
+            echo "Image copied successfully from $sourcePath to $targetPath<br>";
         } else {
-            echo "Failed to copy image.";
+            echo "Failed to copy image.<br>";
         }
     } else {
-        echo "Source image does not exist.";
+        echo "Source image does not exist.<br>";
     }
 
     $pdo = new PDO('sqlite:' . $databaseFile);
@@ -60,20 +60,25 @@ try {
     $pdo->exec($qry);
     echo "db was created succesfully!<br>";
 
-    if (!file_exists('../items.json')) {
-        echo "Error: JSON file not found";
+    $jsonFile = __DIR__ . '/../items.json';
+    if (!file_exists($jsonFile)) {
+        echo "Error: JSON file not found at $jsonFile<br>";
         exit;
     }
 
-    $itemsJSON = file_get_contents('../items.json');
+    $itemsJSON = file_get_contents($jsonFile);
     $itemsD = json_decode($itemsJSON, true);
 
-    
+    if ($itemsD === null) {
+        echo "Error: Failed to decode JSON file<br>";
+        exit;
+    }
+
     $insertQry = "INSERT INTO items (type, title, image, contact, location, description, passphrase, date_posted ) VALUES (:type, :title, :image, :contact, :location, :description, :passphrase, :date_posted )";
     $st = $pdo->prepare($insertQry);
 
     foreach ($itemsD as $item) {
-        
+
         $type = $item['type'];
         $title = $item['title'];
         $image = $item['image'];
@@ -82,7 +87,7 @@ try {
         $description = $item['description'];
         $passphrase = $item['passphrase'];
         $date_posted = $item['date_posted'];
-        
+
         $st->bindParam(':type', $type);
         $st->bindParam(':title', $title);
         $st->bindParam(':image', $image);
@@ -99,7 +104,7 @@ try {
     $testQ = $pdo->query("SELECT * FROM items");
     $r = $testQ->fetchAll(PDO::FETCH_ASSOC);
     echo "<br>Result of test:<br>";
-    var_dump($r); 
+    var_dump($r);
 }
 catch (PDOException $e){
     echo "error ".$e->getMessage();
