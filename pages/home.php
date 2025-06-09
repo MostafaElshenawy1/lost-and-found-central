@@ -34,7 +34,7 @@ try{
 
     foreach ($lost_items as $item) {
 
-        $lost_items_html .= '<div class="slide" onclick="window.location.href=\'item/' . htmlspecialchars($item['id']) . '\'">';
+        $lost_items_html .= '<div class="slide" onclick="window.location.href=\'detail.php?id=' . htmlspecialchars($item['id']) . '\'">';
         $lost_items_html .= '<img src="../assets/images/useruploads/' . htmlspecialchars($item['image']) . '" alt="' . htmlspecialchars($item['title']) . '" />';
         $lost_items_html .= '<p>' . htmlspecialchars($item['title']) . '</p>';
         $lost_items_html .= '</div>';
@@ -43,7 +43,7 @@ try{
     // Build HTML for found items
     $found_items_html = '';
     foreach ($found_items as $item) {
-        $found_items_html .= '<div class="slide" onclick="window.location.href=\'item/' . htmlspecialchars($item['id']) . '\'">';
+        $found_items_html .= '<div class="slide" onclick="window.location.href=\'detail.php?id=' . htmlspecialchars($item['id']) . '\'">';
         $found_items_html .= '<img src="../assets/images/useruploads/' . htmlspecialchars($item['image']) . '" alt="' . htmlspecialchars($item['title']) . '" />';
         $found_items_html .= '<p>' . htmlspecialchars($item['title']) . '</p>';
         $found_items_html .= '</div>';
@@ -52,7 +52,7 @@ try{
     // Add reset button if there's a search
     $resetButton = '';
     if (!empty($searchTerm)) {
-        $resetButton = '<a href="home" class="reset-btn">Clear</a>';
+        $resetButton = '<a href="home.php" class="reset-btn">Clear</a>';
     }
 
     // Load the template

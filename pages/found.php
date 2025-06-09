@@ -20,7 +20,7 @@ try {
     $items_html = '';
 
     foreach ($items as $item) {
-        $items_html .= '<div class="item-card" onclick="window.location.href=\'item/' . htmlspecialchars($item['id']) . '\'">';
+        $items_html .= '<div class="item-card" onclick="window.location.href=\'detail.php?id=' . htmlspecialchars($item['id']) . '\'">';
         $items_html .= '<img src="../assets/images/useruploads/' . htmlspecialchars($item['image']) . '" alt="' . htmlspecialchars($item['title']) . '" />';
         $items_html .= '<p><strong>' . htmlspecialchars($item['title']) . '</strong></p>';
         $items_html .= '<p>' . htmlspecialchars($item['description']) . '</p>';
@@ -35,15 +35,15 @@ try {
     // Add reset button if there's a search
     $resetButton = '';
     if (!empty($searchTerm)) {
-        $resetButton = '<a href="found" class="reset-btn">Clear</a>';
+        $resetButton = '<a href="found.php" class="reset-btn">Clear</a>';
     }
 
     $search_form_html = '
-    <form method="GET" action="found">
+    <form method="GET" action="found.php">
       <input type="text" name="search" placeholder="Search found items..." value="' . htmlspecialchars($searchTerm) . '" />
-      <button type="submit">Search</button>
+    <button type="submit">Search</button>
       ' . $resetButton . '
-    </form>';
+  </form>';
 
     // Replace placeholders with content
     $template = str_replace('<!-- PAGE_TITLE -->', 'Found Items', $template);
