@@ -20,17 +20,17 @@ if (isset($_GET['id'])) {
 
 // Set page title and back link based on item type
 $page_title = "Item Details";
-$back_link = "/home";
+$back_link = "home";
 $back_text = "Home";
 
 if ($item) {
     if ($item['type'] === 'lost') {
         $page_title = "Lost Item Details";
-        $back_link = "/lost";
+        $back_link = "lost";
         $back_text = "Back to Lost Items";
     } else if ($item['type'] === 'found') {
         $page_title = "Found Item Details";
-        $back_link = "/found";
+        $back_link = "found";
         $back_text = "Back to Found Items";
     }
 }
@@ -64,7 +64,7 @@ if ($item) {
     $item_content .= '<div class="error-container">';
     $item_content .= '<h2>Item not found</h2>';
     $item_content .= '<p>The item you are looking for does not exist.</p>';
-    $item_content .= '<a href="/home" class="view-all-btn">Back to Home</a>';
+    $item_content .= '<a href="home" class="view-all-btn">Back to Home</a>';
     $item_content .= '</div>';
 }
 
