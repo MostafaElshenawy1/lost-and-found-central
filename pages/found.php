@@ -32,12 +32,18 @@ try {
     // Load the unified template
     $template = file_get_contents('../templates/LostFound.html');
 
+    // Add reset button if there's a search
+    $resetButton = '';
+    if (!empty($searchTerm)) {
+        $resetButton = '<a href="found.php" class="reset-btn">Clear</a>';
+    }
+
     $search_form_html = '
-  <form method="GET" action="found.php" style="margin: 1rem 0;">
-    <input type="text" name="search" placeholder="Search items..." value="' . htmlspecialchars($searchTerm) . '" />
-    <button type="submit">Search</button>
-    <button type="button" onclick="window.location.href = window.location.pathname;">Reset</button>
-  </form>';
+    <form method="GET" action="found.php">
+      <input type="text" name="search" placeholder="Search found items..." value="' . htmlspecialchars($searchTerm) . '" />
+      <button type="submit">Search</button>
+      ' . $resetButton . '
+    </form>';
 
     // Replace placeholders with content
     $template = str_replace('<!-- PAGE_TITLE -->', 'Found Items', $template);

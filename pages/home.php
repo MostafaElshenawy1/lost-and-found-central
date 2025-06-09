@@ -1,7 +1,7 @@
 <?php
 // Connect to the SQLite database in the parent folder's lib directory
 try{
-    
+
     $pdo = new PDO('sqlite:../lib/items.db');
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -31,9 +31,9 @@ try{
 
     // Build HTML for lost items
     $lost_items_html = '';
-    
+
     foreach ($lost_items as $item) {
-        
+
         $lost_items_html .= '<div class="slide" onclick="window.location.href=\'detail.php?id=' . htmlspecialchars($item['id']) . '\'">';
         $lost_items_html .= '<img src="../assets/images/useruploads/' . htmlspecialchars($item['image']) . '" alt="' . htmlspecialchars($item['title']) . '" />';
         $lost_items_html .= '<p>' . htmlspecialchars($item['title']) . '</p>';
@@ -49,12 +49,20 @@ try{
         $found_items_html .= '</div>';
     }
 
+    // Add reset button if there's a search
+    $resetButton = '';
+    if (!empty($searchTerm)) {
+        $resetButton = '<a href="home.php" class="reset-btn">Clear</a>';
+    }
+
     // Load the template
     $template = file_get_contents('../templates/home.html');
 
     // Replace placeholders with dynamic content
     $template = str_replace('<!-- LOST_ITEMS_PLACEHOLDER -->', $lost_items_html, $template);
     $template = str_replace('<!-- FOUND_ITEMS_PLACEHOLDER -->', $found_items_html, $template);
+    $template = str_replace('<!-- SEARCH_TERM -->', htmlspecialchars($searchTerm), $template);
+    $template = str_replace('<!-- RESET_BUTTON -->', $resetButton, $template);
 
     // Output the final HTML
     echo $template;

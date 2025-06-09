@@ -1,6 +1,5 @@
 <?php
 try {
-  $page = $_GET['page'] ?? 'home';
   // Redirect to main page
   header('Location: pages/home.php');
   exit;

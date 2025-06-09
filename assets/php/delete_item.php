@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try{
         $pdo = new PDO('sqlite:' . $databaseFile);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
+
         //look for the needed item
         $st = $pdo->prepare("SELECT passphrase, image FROM items WHERE id = :id");
         $st->execute([':id' => $id]);

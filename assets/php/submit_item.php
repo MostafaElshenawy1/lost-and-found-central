@@ -7,9 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         $pdo = new PDO('sqlite:' . $databaseFile);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
+
         //these should usually not be null but just in case...
-        $type = $_POST['type'] ?? 'unknown'; 
+        $type = $_POST['type'] ?? 'unknown';
         $title = $_POST['title'] ?? '';
         $description = $_POST['description'] ?? '';
         $passphrase = $_POST['passphrase'] ?? '';
