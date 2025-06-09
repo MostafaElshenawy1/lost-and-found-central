@@ -1,0 +1,4 @@
+
+# error doc
+ErrorDocument 404 /lost-and-found-central-main/404.php
+
